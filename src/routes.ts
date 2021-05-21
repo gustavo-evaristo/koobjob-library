@@ -1,7 +1,9 @@
 import { Router } from 'express'
+import BooksController from './controllers/BooksController'
 
 const routes = Router()
 
-routes.get('/', (req, res) => res.json({ msg: true }))
+// Cadastro de livros
+routes.post('/', BooksController.create)
 
 export default routes
