@@ -2,15 +2,15 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Teste de Contratacao KoobJob",
-  "main": "server.ts",
+  "main": "server.js",
   "repository": "https://github.com/gustavo-evaristo/koobjob-library.git",
   "author": "Gustasvo Evaristo",
   "license": "MIT",
   "scripts": {
-    "start": "yarn ts-node src/server.ts --transpile-only --ignore-watch node_modules",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "jest --detectOpenHandles"
+    "build": "yarn tsc"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",

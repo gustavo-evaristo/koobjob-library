@@ -37,6 +37,9 @@
   # routes.ts
   - Cria os Endpoints da aplicação.
 
+  # /Dist
+  - Arquivos compilados do TypeScript
+
   # .env
   - Contém as variàveis de ambiente.
 
@@ -45,3 +48,6 @@
 
   # eslintrc.json
   - Arquivo de configuração do Eslint
+
+  # Procfile
+   - Arquivo de configuração do Heroku
