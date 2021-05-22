@@ -7,6 +7,7 @@
   "author": "Gustasvo Evaristo",
   "license": "MIT",
   "scripts": {
+    "start": "yarn ts-node src/server.ts --transpile-only --ignore-watch node_modules",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test": "jest --detectOpenHandles"
@@ -27,9 +28,11 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.1.1",
     "typeorm": "^0.2.32",
     "uuid": "^8.3.2"
   }
