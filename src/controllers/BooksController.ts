@@ -1,7 +1,9 @@
 import { Request, Response } from 'express'
-import BooksService from '../services/booksServices'
+import BooksService from '../services/BooksServices'
 
+// Criando o controller de livros
 class BooksController {
+  // Controller para cadastro de novo livro
   async create (req: Request, res: Response): Promise<Response> {
     // Instanciando a classe BookServices
     const booksService = new BooksService()
@@ -9,24 +11,32 @@ class BooksController {
     // Recebendo os dados da requisição
     const { name, author, category, quantity, publisher } = req.body
 
-    // Verificando se os dados são válidos
-    if (name === undefined || author === undefined || category === undefined || quantity === undefined || publisher === undefined) {
-      // Caso seja inválido, retorna uma resposata de erro do cliente
-      return res.status(400).json({ message: 'Invalid Fields' })
-    }
-
+    // Tentando realizar a criação de um novo livro
     try {
-      const book = await booksService.create({ name, author, category, quantity, publisher })
-
+      const book = await booksService.create({
+        name,
+        author,
+        category,
+        quantity,
+        publisher
+      })
       return res.status(200).json(book)
+
+    // Caso ocorra algum erro, retorna para o cliente
     } catch (err) {
-      return res.status(400)
+      return res.status(400).json({ message: err.message })
     }
   }
 
-  // async find (req: Request, res: Response): Promise<Response> {
+  // Controller para listar todos os livros
+  async find (req: Request, res: Response): Promise<Response> {
+    // Instanciando a classe BookServices
+    const booksService = new BooksService()
 
-  // }
+    // buscando todos os livros
+    const books = await booksService.find()
+    return res.status(201).json(books)
+  }
 }
 
 export default new BooksController()

@@ -2,25 +2,39 @@ import { getCustomRepository, Repository } from 'typeorm'
 import Books from '../models/entities/Books'
 import BooksRepository from '../repositories/BooksRepository'
 
-  // interface para criação de livro
-  interface IBooksCreate{
-    name: string
-    author: string
-    category: string
-    quantity: number
-    publisher: string
-  }
+// interface para criação de livro
+interface IBooksCreate {
+  name: string;
+  author: string;
+  category: string;
+  quantity: number;
+  publisher: string;
+}
 
 // Criando os serviços
 export default class BooksServices {
-  private booksRepository: Repository<Books>
+  private booksRepository: Repository<Books>;
 
   constructor () {
     this.booksRepository = getCustomRepository(BooksRepository)
   }
 
+  // Função para cadastrar um novo livro
   async create ({ name, author, category, quantity, publisher }: IBooksCreate) {
-    // Verificando se ja existe algum livro com o memso nome, autor e categoria
+    // Verificando se os campos são válidos
+    if (
+      name === undefined ||
+      author === undefined ||
+      category === undefined ||
+      quantity === undefined ||
+      publisher === undefined
+    ) {
+      // Caso seja inválido, retorna uma resposata de erro do cliente
+      throw new Error('Invalid Fields')
+    }
+
+    // Verificando se ja existe algum livro com o mesmo nome, autor e categoria
+    // Caso ja exista o livro, aumenta a quantidade em estoque
     const bookAlreadyexists: any = await this.booksRepository.findOne({
       where: {
         name,
@@ -29,7 +43,6 @@ export default class BooksServices {
       }
     })
 
-    // Caso ja exista o livro, aumenta a quantidade em estoque
     if (bookAlreadyexists) {
       bookAlreadyexists.quantity += quantity
 
@@ -50,5 +63,14 @@ export default class BooksServices {
     await this.booksRepository.save(book)
 
     return book
+  }
+
+  // Função para listar todos os livros
+  async find () {
+    const books = await this.booksRepository.find({
+      order: { name: 'ASC', author: 'ASC' }
+    })
+
+    return books
   }
 }
