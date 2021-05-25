@@ -15,7 +15,7 @@
   # /src
   - Pasta que contém todos os arquivos, classes e códigos do programa.
 
-  # /database - ormconfig.ts
+  # /database - ormconfig.json
   - Arquivos de configurações do banco de dados.
     # /migrations
     - Processo de criação/atualização/exclusão de dados da aplicação.
@@ -39,9 +39,6 @@
 
   # /Dist
   - Arquivos compilados do TypeScript
-
-  # .env
-  - Contém as variàveis de ambiente.
 
   # tsconfig.json
   - Arquivo de configuração do TypeScript
