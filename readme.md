@@ -11,7 +11,7 @@
   - Express.js
   - TypeScript
   - TypeORM 
-  - MySQL (Hospedado Na plataforma clever-cloud)
+  - MySQL (Hospedado Na plataforma heroku, clearDb)
   - UUID
   - Cors
   - Git
