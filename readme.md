@@ -5,8 +5,8 @@
 
 # Endpoints
   
-  ### Consultar livros - Metodo GET, Url: https://koobjob-library.herokuapp.com/
-  ### Criar livros - Metodo POST, Url: https://koobjob-library.herokuapp.com/
+  - Consultar livros - Metodo GET, Url: https://koobjob-library.herokuapp.com/
+  - Criar livros - Metodo POST, Url: https://koobjob-library.herokuapp.com/
   
 # Tecnologias utilizadas
   - Express.js
