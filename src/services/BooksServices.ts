@@ -33,25 +33,7 @@ export default class BooksServices {
       throw new Error('Invalid Fields')
     }
 
-    // Verificando se ja existe algum livro com o mesmo nome, autor e categoria
-    // Caso ja exista o livro, aumenta a quantidade em estoque
-    const bookAlreadyexists: any = await this.booksRepository.findOne({
-      where: {
-        name,
-        author,
-        category
-      }
-    })
-
-    if (bookAlreadyexists) {
-      bookAlreadyexists.quantity += quantity
-
-      await this.booksRepository.save(bookAlreadyexists)
-
-      return bookAlreadyexists
-    }
-
-    // Caso não exista o livro, realiza a criação
+    // Eealizando a criação do livro
     const book = this.booksRepository.create({
       name,
       author,
