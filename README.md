@@ -3,7 +3,6 @@
 ## URL do App hospedado na Netlify
   https://jolly-murdock-42eda0.netlify.app/
   
-  
 ## Tecnologias utilizadas
   - React.js
   - TypeScript
