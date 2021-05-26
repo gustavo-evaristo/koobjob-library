@@ -1,7 +1,8 @@
 # Frontend da Aplicação Library - KoobJob
 
-## URL da API
-  https://koobjob-library.herokuapp.com
+## URL do App hospedado na Netlify
+  https://jolly-murdock-42eda0.netlify.app/
+  
   
 ## Tecnologias utilizadas
   - React.js
