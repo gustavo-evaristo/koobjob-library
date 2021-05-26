@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import routes from './routes'
 import createConnection from './database'
+import path from 'path'
 
 class App {
   // Definindo o tipo da variavel express
@@ -21,6 +22,12 @@ class App {
   private middlewares () {
     // Permitindo arquivos json
     this.express.use(express.json())
+
+    //Disponibilizando os arquivos estáticos na pasta public
+    this.express.use(express.static(path.join(__dirname, '..', 'public')))
+
+    //Definido as imagens na pasta uploads
+    this.express.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')))
 
     // Habilitando o acesso externo da API
     this.express.use(cors())
