@@ -1,6 +1,6 @@
 # Backend da Aplicação Library - KoobJob
 
-# URL da aplicação
+# URL da API
   https://koobjob-library.herokuapp.com
 
 # Endpoints
