@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #202024;
+  overflow-x: hidden;
+}
+
+/* personalizar a barra em geral, definindo largura para a barra vertical e horizontal */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+   
+  /* personalizar o fundo da barra*/
+::-webkit-scrollbar-track {
+  background: #202024;
+}
+   
+  /* alça da barra */
+::-webkit-scrollbar-thumb {
+  background: #9358FF;
+}
