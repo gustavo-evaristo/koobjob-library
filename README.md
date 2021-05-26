@@ -9,3 +9,7 @@
   - Git
   - Eslint
   - Prettier
+
+# Prints do projeto
+
+<img src="/uploads/img1.jpeg">
